@@ -44,3 +44,23 @@ h1,h2,h3{
 .flash-red{
     background-color: red;
 }
+
+#start-btn {
+    background-color: #4a90d9;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 1rem;
+    transition: background-color 0.2s;
+}
+
+#start-btn:hover, #start-btn:focus {
+    background-color: #357abd;
+}
+
+#start-btn.hidden {
+    display: none;
+}
