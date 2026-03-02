@@ -7,16 +7,19 @@ let started = false;
 let level = 0;
 let h2 = document.querySelector("h2");
 let highestScore = 0;
+let startBtn = document.querySelector("#start-btn");
 
-document.addEventListener("keypress",function(){
+function startGame(){
     if(started == false){
         console.log("Game Started");
         started = true;
-
+        startBtn.classList.add("hidden");
         levelUp();
-
     }
-});
+}
+
+document.addEventListener("keypress", startGame);
+startBtn.addEventListener("click", startGame);
 
 function gameFlash(btn){
     btn.classList.add("flash");
@@ -55,7 +58,7 @@ function checkAns(idx){
         }
     }
     else{
-        h2.innerHTML = `Game Over ! YOUR SCORE WAS <b>${level}</b> Press any key to Re-start`;
+        h2.innerHTML = `Game Over ! YOUR SCORE WAS <b>${level}</b> Press any key or click Start Game to Restart`;
         if(highestScore < level ){
             highestScore = level;
             let h3 = document.querySelector("h3");
@@ -89,4 +92,5 @@ function reset(){
     gameSeq=[];
     userSeq=[];
     started=false;
+    startBtn.classList.remove("hidden");
 }
